@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Graph Visualizer</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrollbars */
+            background-color: black; /* Set the background to black */
+        }
+
+        #graph {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #controls {
+            position: absolute;
+            top: 10px; /* Adjust as needed */
+            left: 10px; /* Adjust as needed */
+            z-index: 10; /* Ensure controls are above the SVG */
+        }
+
+        svg {
+            display: block; /* Remove any margin or padding */
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Style for buttons and inputs */
+        button, input {
+            background-color: #333; /* Dark background for controls */
+            color: white; /* Light color text for visibility */
+            border: none; /* Remove default border */
+            padding: 10px 20px; /* Add some padding */
+            margin: 0 10px; /* Add some outside space */
+            border-radius: 5px; /* Rounded corners for the buttons */
+        }
+    </style>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<div id="controls">
+    <input type="file" id="file-input" multiple webkitdirectory directory />
+    <button id="load-files">Load Files</button>
+    <label for="link-filter">Link Display Percentage:</label>
+    <input type="range" id="link-filter" min="1" max="100" value="100">
+    <span id="percentage">100%</span>
+</div>
+<div id="graph"></div>
+
+<script src="script.js"></script> <!-- Link to your JavaScript file -->
+
+</body>
+</html>
